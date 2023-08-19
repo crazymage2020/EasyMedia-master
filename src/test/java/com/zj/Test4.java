@@ -9,7 +9,7 @@ import org.bytedeco.javacv.Frame;
 
 /**
  * @author 小布
- * @version 1.0.0
+ * @version 1.0.0  错误的用不了
  * @className Test4.java
  * @createTime 2023年08月19日 15:06:00
  */
