@@ -74,7 +74,7 @@ public class JavaCvUtil {
     public static String convertStream2File(String streamPath,String fileFullPathName) {
         long beginTime = System.currentTimeMillis();
         FFmpegFrameGrabber frameGrabber = new FFmpegFrameGrabber(streamPath);
-        Frame captured_frame = null;
+        Frame capturedFrame = null;
         FFmpegFrameRecorder recorder = null;
         try {
             frameGrabber.start();
@@ -94,16 +94,16 @@ public class JavaCvUtil {
             recorder.start();
             while (true) {
                 try {
-                    captured_frame = frameGrabber.grabFrame();
+                    capturedFrame = frameGrabber.grabFrame();
 
-                    if (captured_frame == null) {
+                    if (capturedFrame == null) {
                         System.out.println("!!! Failed cvQueryFrame");
                         break;
                     }
-                    recorder.record(captured_frame);
+                    recorder.record(capturedFrame);
                     long nowTime = System.currentTimeMillis();
-                    //60S自动断开
-                    if (nowTime - beginTime >= 60*1000) {
+                    //10S自动断开
+                    if (nowTime - beginTime >= 10*1000) {
                         break;
                     }
                 } catch (Exception e) {
