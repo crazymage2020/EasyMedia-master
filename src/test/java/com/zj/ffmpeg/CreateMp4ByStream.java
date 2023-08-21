@@ -15,7 +15,7 @@ public class CreateMp4ByStream {
         long beginTime = System.currentTimeMillis();
 
         String ffmpeg = Loader.load(org.bytedeco.ffmpeg.ffmpeg.class);
-        ProcessBuilder pb = new ProcessBuilder(ffmpeg, "-i", "rtsp://admin:admin666@192.168.1.2:554/stream1", "-vcodec", "h264", "-t","30","/Users/xiaobu/Downloads/1.mp4");
+        ProcessBuilder pb = new ProcessBuilder(ffmpeg, "-i", "rtsp://admin:admin666@192.168.1.5:554/stream1", "-vcodec", "h264", "-t","30","/Users/xiaobu/Downloads/1.mp4");
         try {
             pb.inheritIO().start().waitFor();
             long nowTime = System.currentTimeMillis();
